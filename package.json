@@ -1,0 +1,25 @@
+{
+  "name": "acmicpc_javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kadragon/acmicpc_javascript.git",
+  "author": "kangdonguk <kangdongouk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "lint-fix": "eslint '**/*.js' --fix",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2"
+  }
+}

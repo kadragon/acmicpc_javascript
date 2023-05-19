@@ -2,7 +2,7 @@ const inputPath =
   process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
 const input = require("fs").readFileSync(inputPath).toString().trim();
 
-const [t, ...values] = input.split("\n").map((v) => +v);
+const [, ...values] = input.split("\n").map((v) => +v);
 
 const factorial = [1, 1];
 

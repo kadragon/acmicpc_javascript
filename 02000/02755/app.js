@@ -18,7 +18,7 @@ const creditTable = {
   F: 0,
 };
 
-const [_, ...arr] = input.split("\n");
+const arr = input.split("\n").slice(1);
 const data = arr.map((v) => v.split(" ").slice(1));
 
 let gradeSum = 0;

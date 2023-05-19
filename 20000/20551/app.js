@@ -2,7 +2,7 @@ const inputPath =
   process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
 const input = require("fs").readFileSync(inputPath).toString().trim();
 
-const [n, m, ...values] = input.split(/\s/).map((v) => +v);
+const [n, , ...values] = input.split(/\s/).map((v) => +v);
 const data = values.slice(0, n).sort((a, b) => a - b);
 const targets = values.slice(n);
 

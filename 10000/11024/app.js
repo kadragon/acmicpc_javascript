@@ -2,7 +2,7 @@ const filePath =
   process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
 const input = require("fs").readFileSync(filePath).toString().trim();
 
-const [T, ...arrs] = input.split("\n");
+const [, ...arrs] = input.split("\n");
 
 arrs.forEach((arr) => {
   arr = arr.split(" ").map(Number);

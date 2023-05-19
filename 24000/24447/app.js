@@ -3,7 +3,7 @@ const filePath =
 const input = require("fs").readFileSync(filePath).toString().trim();
 
 const [d, ...tmpNodes] = input.split("\n");
-const [n, _, r] = d.split(" ").map((v) => +v);
+const [n, , r] = d.split(" ").map((v) => +v);
 const trunks = tmpNodes.map((v) => v.split(" ").map((v) => +v));
 
 let ans = 0;

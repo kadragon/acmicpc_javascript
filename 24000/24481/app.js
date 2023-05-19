@@ -3,7 +3,7 @@ const filePath =
 const input = require("fs").readFileSync(filePath).toString().trim();
 
 const [d, ...tmp] = input.split("\n");
-const [n, m, r] = d.split(" ").map((v) => +v);
+const [n, , r] = d.split(" ").map((v) => +v);
 const trunks = tmp.map((v) => v.split(" ").map((v) => +v));
 
 const depth = Array.from(Array(n + 1), () => -1);

@@ -3,7 +3,7 @@ const inputPath =
 const input = require("fs").readFileSync(inputPath).toString().trim();
 
 const inputs = input.split("\n");
-const [_, M] = inputs[0].split(" ").map((v) => +v);
+const [, M] = inputs[0].split(" ").map((v) => +v);
 const s = inputs[1].split(" ").map((v) => +v);
 
 for (let i = 0; i < M; i++) {

@@ -2,7 +2,7 @@ const inputPath =
   process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
 const input = require("fs").readFileSync(inputPath).toString().trim();
 
-const [n, ...heights] = input.split("\n").map((v) => +v);
+const [, ...heights] = input.split("\n").map((v) => +v);
 const stack = [];
 let answer = 0;
 
