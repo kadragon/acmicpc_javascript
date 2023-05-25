@@ -4,7 +4,7 @@
     "prefix": "jssolve",
     "body": [
       "const inputPath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';",
-      "const input = require('fs').readFileSync(inputPath).toString().trim();",
+      "const input = require('fs').readFileSync(inputPath, 'utf-8').toString().trim();",
       ""
     ]
   }
