@@ -1,11 +1,14 @@
 {
   "custom input": {
-    "scope": "javascript,typescript",
+    "scope": "javascript",
     "prefix": "jssolve",
     "body": [
+      "const solution = (input) => {}",
+      "",
       "const inputPath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';",
       "const input = require('fs').readFileSync(inputPath, 'utf-8').toString().trim();",
-      ""
+      "",
+      "console.log(solution(input));"
     ]
   }
 }
