@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [[ -z "$1" ]]
+then
+    echo "No argument supplied"
+    exit 1
+fi
+
 a=$1
 b=1000
 c=10000
