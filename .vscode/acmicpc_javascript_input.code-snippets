@@ -8,8 +8,7 @@
       "const inputPath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';",
       "const input = require('fs').readFileSync(inputPath, 'utf-8').toString().trim();",
       "",
-      "process.stdout.write(solution(input));",
-      "process.exit(0);"
+      "console.log(solution(input));"
     ]
   }
 }
