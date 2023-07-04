@@ -10,27 +10,5 @@
       "",
       "console.log(solution(input));"
     ]
-  },
-  "generatePrimeNumbers": {
-    "scope": "javascript",
-    "prefix": "genprime",
-    "body": [
-      "const generatePrimeNumbers = (n) => {",
-      "  const primes = [2];",
-      "  const isPrime = Array(Math.floor(n / 2) + 1).fill(true);",
-      "",
-      "  for (let i = 1; i < isPrime.length; i++) {",
-      "    if (isPrime[i]) {",
-      "      const prime = i * 2 + 1;",
-      "      primes.push(prime);",
-      "      for (let j = prime * prime; j <= n; j += prime * 2) {",
-      "        isPrime[Math.floor(j / 2)] = false;",
-      "      }",
-      "    }",
-      "  }",
-      "",
-      "  return primes;",
-      "};"
-    ]
   }
 }
