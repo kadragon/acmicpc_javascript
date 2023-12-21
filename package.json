@@ -9,7 +9,7 @@
     "prepare": "husky install",
     "lint-fix": "eslint '**/*.js' --fix",
     "lint-staged": "lint-staged",
-    "test": "jest"
+    "test": "jest --watch --verbose"
   },
   "lint-staged": {
     "*.js": [

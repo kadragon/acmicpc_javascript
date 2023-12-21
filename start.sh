@@ -32,8 +32,9 @@ mkdir -p "$d"/"$e"
 # cp ./main.py ./"$d"/"$e"/main.py
 
 touch ./"$d"/"$e"/app.js
-touch ./"$d"/"$e"/input.txt
+touch ./"$d"/"$e"/app.test.js
+echo 'const { solution } = require("./app");' >> ./"$d"/"$e"/app.test.js
 
 ## vscode --reuse-window
-code -r ./"$d"/"$e"/input.txt
 code -r ./"$d"/"$e"/app.js
+code -r ./"$d"/"$e"/app.test.js

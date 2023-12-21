@@ -16,3 +16,5 @@ const inputPath =
 const input = require("fs").readFileSync(inputPath, "utf-8").toString().trim();
 
 console.log(solution(input));
+
+exports.solution = solution;
