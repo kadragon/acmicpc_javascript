@@ -6,8 +6,7 @@ const solution = (input) => {
 };
 
 if (process.platform === "linux") {
-  const fs = require("fs");
-  const input = fs.readFileSync("/dev/stdin").toString().trim();
+  const input = require("fs").readFileSync("/dev/stdin").toString().trim();
   console.log(solution(input));
 }
 
