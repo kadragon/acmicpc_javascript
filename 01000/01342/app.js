@@ -1,44 +1,46 @@
-class Solution {
-  constructor() {
-    this.count = 0;
-    this.len = input.length;
-    this.inputMap = new Map();
+function solution(input) {
+  const result = new Set();
+  const length = input.length;
+  const charArray = input.split("");
 
-    for (const char of input) {
-      this.inputMap.set(
-        char,
-        this.inputMap.get(char) ? this.inputMap.get(char) + 1 : 1
-      );
-    }
+  function swap(array, i, j) {
+    [array[i], array[j]] = [array[j], array[i]];
   }
 
-  dfs = (res) => {
-    if (res.length === this.len) {
-      this.count++;
+  function shouldSwap(str, start, curr) {
+    for (let i = start; i < curr; i++) {
+      if (str[i] === str[curr]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function permute(array, index) {
+    if (index === length) {
+      const str = array.join("");
+      if (!/(.)\1/.test(str)) {
+        result.add(str);
+      }
       return;
     }
 
-    for (let [key, value] of this.inputMap) {
-      if (res[res.length - 1] === key) continue;
-
-      if (value > 0) {
-        this.inputMap.set(key, value - 1);
-        this.dfs(res + key);
-        this.inputMap.set(key, value);
+    for (let i = index; i < length; i++) {
+      if (shouldSwap(array, index, i)) {
+        swap(array, index, i);
+        permute(array, index + 1);
+        swap(array, index, i);
       }
     }
-  };
+  }
 
-  getAnswer = () => {
-    return this.count;
-  };
+  permute(charArray, 0);
+  return result.size;
 }
 
-const inputPath =
-  process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
-const input = require("fs").readFileSync(inputPath, "utf-8").toString().trim();
+if (process.platform === "linux") {
+  const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+  console.log(solution(input));
+}
 
-const solution = new Solution();
-solution.dfs("");
-
-console.log(solution.getAnswer());
+exports.solution = solution;

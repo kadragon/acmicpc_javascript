@@ -1,21 +1,30 @@
-const filePath =
-  process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt";
-const input = require("fs").readFileSync(filePath).toString().trim();
+const solution = (input) => {
+  const count = { U: 0, D: 0 };
 
-const cnt = { U: 0, D: 0, P: 0, C: 0 };
-let maxCnt = 0;
-let ans = "";
-
-for (const c of input) {
-  if (c === "U" || c === "C") {
-    cnt["U"]++;
-    maxCnt = Math.max(maxCnt, cnt["U"]);
-  } else if (c === "D" || c === "P") {
-    cnt["D"]++;
+  for (const char of input) {
+    if (char === "U" || char === "C") {
+      count.U++;
+    } else {
+      count.D++;
+    }
   }
+
+  let answer = "";
+
+  if (count.U > Math.floor(count.D / 2) + (count.D % 2)) {
+    answer = "U";
+  }
+
+  if (count.D > 0) {
+    answer += "DP";
+  }
+
+  return answer;
+};
+
+if (process.platform === "linux") {
+  const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+  console.log(solution(input));
 }
 
-if (cnt["U"] >= cnt["D"]) ans += "U";
-if (cnt["D"] >= cnt["U"]) ans += "DP";
-
-console.log(ans);
+exports.solution = solution;
