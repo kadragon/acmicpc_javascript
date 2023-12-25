@@ -83,7 +83,11 @@ const fetchProblemData = async (id) => {
  */
 const createDirWithFiles = (id, testInputs, testOutputs) => {
   const baseDir = Math.floor(id / 1000) * 1000;
-  const dirPath = path.join(__dirname, `${baseDir}`, `${id}`);
+  const dirPath = path.join(
+    __dirname,
+    `${baseDir.toString().padStart(5, "0")}`,
+    `${id.toString().padStart(5, "0")}`
+  );
   fs.mkdirSync(dirPath, { recursive: true });
 
   const files = ["app.js", "app.test.js"];
