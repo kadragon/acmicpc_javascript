@@ -67,6 +67,12 @@ const fetchProblemData = async (id) => {
       samples.outputs.push(parsedHTML(elem).text().trim());
     });
 
+    for (let i = 0; i < samples.outputs.length; i++) {
+      if (isNaN(samples.outputs[i])) {
+        samples.outputs[i] = `\`${samples.outputs[i]}\``;
+      }
+    }
+
     return samples;
   } catch {
     // Handle errors silently or add error handling as needed
@@ -99,7 +105,7 @@ const createDirWithFiles = (id, testInputs, testOutputs) => {
     ...testInputs
       .map((input, index) => [
         `test('test${index}', () => {`,
-        `  expect(solution(\`${input}\`)).toBe(\`${testOutputs[index]}\`);`,
+        `  expect(solution(\`${input}\`)).toBe(${testOutputs[index]});`,
         "});",
         "",
       ])
