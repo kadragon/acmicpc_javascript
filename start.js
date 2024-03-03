@@ -88,9 +88,11 @@ const fetchProblemData = async (id) => {
  * @return {string} The path to the created directory.
  */
 const createDirWithFiles = (id, testInputs, testOutputs) => {
+  const topDir = Math.floor(id / 10000) * 10000;
   const baseDir = Math.floor(id / 1000) * 1000;
   const dirPath = path.join(
     __dirname,
+    `${topDir.toString().padStart(5, "0")}`,
     `${baseDir.toString().padStart(5, "0")}`,
     `${id.toString().padStart(5, "0")}`
   );
