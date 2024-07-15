@@ -45,7 +45,7 @@ yarn test
 1. 이 저장소를 클론합니다:
 
    ```bash
-   git clone https://github.com/yourusername/baekjoon-js-solutions.git
+   git clone https://github.com/kadragon/acmicpc_javascript.git
    ```
 
 2. 프로젝트 디렉토리로 이동합니다:
