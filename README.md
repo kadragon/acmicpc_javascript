@@ -27,7 +27,7 @@
 특정 문제의 테스트 케이스를 준비하려면 다음 명령어를 사용하세요:
 
 ```bash
-yarn start XXXXX
+npm start XXXXX
 ```
 
 여기서 `XXXXX`는 준비하고자 하는 문제의 번호입니다.
@@ -37,7 +37,7 @@ yarn start XXXXX
 준비된 테스트 케이스로 솔루션을 테스트하려면 다음 명령어를 사용하세요:
 
 ```bash
-yarn test
+npm test
 ```
 
 ## 시작하기
@@ -57,19 +57,19 @@ yarn test
 3. 필요한 의존성을 설치합니다:
 
    ```bash
-   yarn install
+   npm install
    ```
 
 4. 원하는 문제의 테스트 케이스를 준비합니다:
 
    ```bash
-   yarn start 12345
+   npm start 12345
    ```
 
 5. 솔루션을 작성하고 테스트를 실행합니다:
 
    ```bash
-   yarn test
+   npm test
    ```
 
 ## 기여하기
