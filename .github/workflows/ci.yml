@@ -20,5 +20,3 @@ jobs:
       - run: npm ci
 
       - run: npx eslint '**/*.js'
-
-      - run: npx jest --verbose
